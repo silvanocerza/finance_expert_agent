@@ -38,6 +38,9 @@ def get_financial_data():
 
     query = f"select {columns} " f"from {table} "
 
+    if not where:
+        where = []
+
     if not isinstance(where, list):
         raise ValueError("where is not a list")
 
