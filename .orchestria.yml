@@ -11,7 +11,7 @@ agents:
       - ECONOMY_DB_PORT
       - ECONOMY_DB_NAME
     generation_arguments: { "temperature": 0 }
-    supported_tools: ["Get financial data", "Get table schema"]
+    supported_tools: ["get_financial_data", "get_table_schema"]
     system_prompt: |-
       You're a politician expert in governmental finance.
 
@@ -193,7 +193,7 @@ agents:
       2024-02 - Pagamenti Bilancio dello Stato per Amministrazione Classificazione Economica II livello data_6a2a2cc83a31103ceaa85e6d3c67f13b
       2024 - Veneto - SIOPE Movimenti mensili delle disponibilità liquide data_898932971702f1d8205a6b757deea2e1
 tools:
-  - name: Get financial data
+  - name: get_financial_data
     description: -|
       Retrieves data stored in the database in the specified table at the specified page.
       1000 rows per page are returned.
@@ -225,7 +225,7 @@ tools:
       required:
         - table
         - page
-  - name: Get table schema
+  - name: get_table_schema
     description: -|
       Gets a table's schema. This is useful to better understand which financial data to retrieve.
     language: python
