@@ -16,16 +16,16 @@ def get_financial_data():
     page = data.get("page")
     where = data.get("where")
 
-    if not table:
+    if table is None:
         raise ValueError("table not provided")
-    if not page:
-        raise ValueError("table not provided")
+    if page is None:
+        raise ValueError("page not provided")
     try:
         page = int(page)
     except ValueError:
         raise ValueError("page is not an integer")
 
-    if not columns:
+    if columns is None:
         columns = "*"
     else:
         if not isinstance(columns, list):
@@ -38,7 +38,7 @@ def get_financial_data():
 
     query = f"select {columns} " f"from {table} "
 
-    if not where:
+    if where is None:
         where = []
 
     if not isinstance(where, list):
