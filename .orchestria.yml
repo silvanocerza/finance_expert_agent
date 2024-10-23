@@ -206,7 +206,7 @@ tools:
           description: Name of the table to query
           type: string
         page:
-          description: Page to retrieve
+          description: Page to retrieve, starts from 1 increasing
           type: integer
         columns:
           description: -|
